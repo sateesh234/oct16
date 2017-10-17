@@ -6,9 +6,9 @@ ip address is {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(1[0-9]
 block2 zone-c change3333
 ip address is {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.([6-8]4)\.') }}
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[3-5])\.') %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(02[3-5])\.') %}
 block3 zone-d change33333
-ip address is {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[3-5])\.') }}
+ip address is {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(0[3-5])\.') }}
 
 {% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.') %}
 block4 zone-f change333333
