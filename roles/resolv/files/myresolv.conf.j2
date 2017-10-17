@@ -1,12 +1,12 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.11\.', ansible_all_ipv4_addresses[0] %}
+{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.11\.') %}
 block1 zoneb
 
-{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.84\.', ansible_all_ipv4_addresses[0] %}
+{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.84\.') %}
 block2 zonec
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.', ansible_all_ipv4_addresses[0] %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.',) %}
 block3 zoned
 
 {% else %}
