@@ -1,16 +1,16 @@
 #this is example of template
 
 {% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.11\.') %}
-block1 zoneb
+block3 zoneb
 
 {% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.84\.') %}
-block2 zonec
+block1 zonec
 
 {% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.',) %}
-block3 zoned
+block2 zoned
 
 {% else %}
-block3
+block36565+5+656+2525
 ip address is {{ ansible_all_ipv4_addresses[0] }}
 
 
