@@ -7,7 +7,7 @@
     owner: root
     group: root
     mode: '0744'
-  when: "{{ ansible_all_ipv4_addresses[0] | "regex_search('^172\.31\.(1[0-9])\.')" }}"
+  when: "{{ ansible_all_ipv4_addresses[0]|"regex_search('^172\.31\.(1[0-9])\.')" }}"
 
 - name: resolv conf file creationdc2
   file:
@@ -16,7 +16,7 @@
     owner: root
     group: root
     mode: '0744'
-  when: "{{ ansible_all_ipv4_addresses[0] | "regex_search('^172\.31\.([6-8]4)\.')" }}"
+  when: "{{ ansible_all_ipv4_addresses[0]|"regex_search('^172\.31\.([6-8]4)\.')" }}"
 
 - name: resolv conf file creationdc3
   file:
@@ -25,7 +25,7 @@
     owner: root
     group: root
     mode: '0744'
-  when: "{{ ansible_all_ipv4_addresses[0] | "regex_search('^172\.31\.(2[3-5])\.')" }}"
+  when: "{{ ansible_all_ipv4_addresses[0]|"regex_search('^172\.31\.(2[3-5])\.')" }}"
 
 - name: resolv conf file creationdc4 default
   file:
@@ -34,4 +34,4 @@
     owner: root
     group: root
     mode: '0744'
-  when: "{{ ansible_all_ipv4_addresses[0] | "regex_search('^172\.31\.69\.')" }}"
+  when: "{{ ansible_all_ipv4_addresses[0]|"regex_search('^172\.31\.69\.')" }}"
