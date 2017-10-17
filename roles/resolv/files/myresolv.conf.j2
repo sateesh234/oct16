@@ -1,0 +1,12 @@
+#this is example of template
+
+{% if ansible_all_ipv4_addresses == '' %}
+  block1
+
+{% elif  ansible_all_ipv4_addresses == '' %}
+  block2
+
+{% else %}
+  block3
+
+{% endif %}
