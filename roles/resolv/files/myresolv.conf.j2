@@ -1,16 +1,20 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.11\.') %}
-block1 zoneb
+{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.[0-14]\.') %}
+block1 zoneb cidr[0-14]
+{{ ansible_all_ipv4_addresses[0] }}
 
-{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.84\.') %}
-block2 zonec
+{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.[80-89]\.') %}
+block2 zonec cidr [80-89]
+{{ ansible_all_ipv4_addresses[0] }}
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.',) %}
-block3 zoned
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.[16-30]\.',) %}
+block3 zoned cidr [16-30]
+{{ ansible_all_ipv4_addresses[0] }}
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.',) %}
-block4 zonef
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.[64-75]\.',) %}
+block4 zonef cidr [64-75]
+{{ ansible_all_ipv4_addresses[0] }}
 
 {% else %}
 block36565+5+656+2525
