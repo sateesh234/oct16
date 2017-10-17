@@ -1,9 +1,9 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses == 172.31.11.56 %}
+{% if {{ ansible_all_ipv4_addresses }} == 172.31.11.56 %}
 block1
 
-{% elif  ansible_all_ipv4_addresses == '34.201.29.95' %}
+{% elif  {{ ansible_all_ipv4_addresses }} == '34.201.29.95' %}
 block2
 
 {% else %}
