@@ -1,9 +1,9 @@
 ---
-  
+
 - name: resolv conf file creation
-  template:
-    src: files/myresolv.conf.j2
-    dest: /etc/myresolv.conf
+  file:
+    src: files/myresolv.conf
+    dest: /etc/mynresolv.conf
     owner: root
     group: root
     mode: '0744'

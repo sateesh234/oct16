@@ -1,0 +1,37 @@
+---
+
+- name: resolv conf file creationdc1
+  file:
+    src: files/dc1/myresolve.conf
+    dest: /etc/mynresolve.conf
+    owner: root
+    group: root
+    mode: '0744'
+  when: {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(1[0-9])\.') }}
+
+- name: resolv conf file creationdc2
+  file:
+    src: files/dc2/myresolve.conf
+    dest: /etc/mynresolve.conf
+    owner: root
+    group: root
+    mode: '0744'
+  when: {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.([6-8]4)\.') }}
+
+- name: resolv conf file creationdc3
+  file:
+    src: files/dc3/myresolve.conf
+    dest: /etc/mynresolve.conf
+    owner: root
+    group: root
+    mode: '0744'
+  when: {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[3-5])\.') }}
+
+- name: resolv conf file creationdc4 default
+  file:
+    src: files/dc4/myresolve.conf
+    dest: /etc/mynresolve.conf
+    owner: root
+    group: root
+    mode: '0744'
+  when: {{ ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.') }}

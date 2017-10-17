@@ -5,4 +5,4 @@
   user: centos
   become: true
   roles:
-    - resolv
+    - nresolv
