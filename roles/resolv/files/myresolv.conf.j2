@@ -6,10 +6,10 @@ block1 zoneb try with range 11 to
 {% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(8[0-4]\.') %}
 block2 zonec try
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[0-6])\.',) %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[0-6])\.') %}
 block3 zoned mbjh
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(6[0-9])\.',) %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(6[0-9])\.') %}
 block4 zonef mhbh
 
 
