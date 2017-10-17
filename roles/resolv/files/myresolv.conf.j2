@@ -1,10 +1,13 @@
 #this is example of template
 
 {% if ansible_all_ipv4_addresses[0] == '172.31.11.56' %}
-block1
+block1 zoneb
 
-{% elif  ansible_all_ipv4_addresses[0] == '34.201.29.95' %}
-block2
+{% elif  ansible_all_ipv4_addresses[0] == '172.31.84.69' %}
+block2 zonec
+
+{% elif  ansible_all_ipv4_addresses[0] == '172.31.25.60' %}
+block3 zoned
 
 {% else %}
 block3
