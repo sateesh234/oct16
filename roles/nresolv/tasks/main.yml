@@ -2,7 +2,7 @@
 
 - name: resolv conf file creationdc1
   file:
-    src: files/dc1/myresolve.conf
+    src: files/dc1/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
@@ -12,7 +12,7 @@
 
 - name: resolv conf file creationdc2
   file:
-    src: files/dc2/myresolve.conf
+    src: files/dc2/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
@@ -22,7 +22,7 @@
 
 - name: resolv conf file creationdc3
   file:
-    src: files/dc3/myresolve.conf
+    src: files/dc3/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
@@ -32,7 +32,7 @@
 
 - name: resolv conf file creationdc4 default
   file:
-    src: files/dc4/myresolve.conf
+    src: files/dc4/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
