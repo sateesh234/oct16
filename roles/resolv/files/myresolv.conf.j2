@@ -7,7 +7,7 @@ ip address is {{ ansible_all_ipv4_addresses }}
 {% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.84\.') %}
 block2 zone-c cccccccccccccccccc
 
-{% elif  ansible_all_ipv4_addresses[0] |regex_search('^172\.31\.25\.') %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.') %}
 block3 zone-d dddddddddddddddddddd
 
 {% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.') %}
