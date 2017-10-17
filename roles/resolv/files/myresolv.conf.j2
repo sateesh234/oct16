@@ -1,14 +1,14 @@
 #this is example of template
 
-{% if ansible_default_ipv4_address == '172.31.11.56 %}
+{% if ansible_default_ipv4:address == '172.31.11.56 %}
 block1
 
-{% elif  ansible_default_ipv4_address == '34.201.29.95' %}
+{% elif  ansible_default_ipv4:address == '34.201.29.95' %}
 block2
 
 {% else %}
 block3
-ip address is {{ ansible_default_ipv4_address }}
+ip address is {{ ansible_default_ipv4:address }}
 
 
 {% endif %}
