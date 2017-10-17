@@ -1,6 +1,6 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses | regex_search('^172\.31\.11\.'), ansible_all_ipv4_addresses %}
+{% if ansible_all_ipv4_addresses | regex_search('^172\.31\.11\.'), ansible_all_ipv4_addresses: %}
 block1 zone-b change
 ip address is {{ ansible_all_ipv4_addresses }}
 
