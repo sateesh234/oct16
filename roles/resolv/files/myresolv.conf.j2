@@ -1,21 +1,21 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(1[0-2])\.') %}
+{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[0-2])\.') %}
 block1 zoneb try with range 11 range and last octate is any thing
 
-{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(8[0-4])\.') %}
+{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(9[0-4])\.') %}
 block2 zonec ewfsfs
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[0-6])\.') %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(3[0-6])\.') %}
 block3 zoned mbjh
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(6[0-9])\.') %}
+{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(5[0-9])\.') %}
 block4 zonef mhbh
 
 
 
 {% else %}
-block36565+5+656+2525
+this is the test block
 ip address is {{ ansible_all_ipv4_addresses[0] }}
 
 
