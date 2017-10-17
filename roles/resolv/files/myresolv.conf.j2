@@ -1,6 +1,6 @@
 {% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(1[0-9])\.') %}
 block1 zone-b change3333
-ip address is {{ ansible_all_ipv4_addresses[] }}
+ip address is {{ ansible_all_ipv4_addresses[ ] }}
 
 {% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.([6-8]4)\.') %}
 block2 zone-c change3333
