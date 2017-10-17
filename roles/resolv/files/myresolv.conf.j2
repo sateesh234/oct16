@@ -1,7 +1,7 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses | (ansible_all_ipv4_addresses | regex_search('^172\.31\.11\.')) %}
-block1 zone-b bbbbbbbbb
+{% if ansible_all_ipv4_addresses[0] == regex_search('^172\.31\.11\.') %}
+block1 zone-b bbbbbbbbby6y6y6y6
 ip address is {{ ansible_all_ipv4_addresses }}
 
 {% elif ansible_all_ipv4_addresses[0] == regex_search('^172\.31\.84\.') %}
