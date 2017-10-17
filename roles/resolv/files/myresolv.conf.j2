@@ -1,21 +1,22 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[0-2])\.') %}
-block1 zoneb try with range 11 range and last octate is any thing
+{% if ansible_all_ipv4_addresses | (ansible_all_ipv4_addresses | regex_search('^172\.31\.\b(\d{1,3}\.){1}\d{1,3}\b')) %}
+block1 zone-b bbbbbbbbb
+ip address is {{ ansible_all_ipv4_addresses[0] }}
 
-{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(9[0-4])\.') %}
-block2 zonec ewfsfs
+{% elif ansible_all_ipv4_addresses[0] == regex_search('^172\.31\.84\.') %}
+block2 zone-c cccccccccccccccccc
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(3[0-6])\.') %}
-block3 zoned mbjh
+{% elif  ansible_all_ipv4_addresses[0] == regex_search('^172\.31\.25\.',) %}
+block3 zone-d dddddddddddddddddddd
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(5[0-9])\.') %}
-block4 zonef mhbh
+{% elif  ansible_all_ipv4_addresses[0] == regex_search('^172\.31\.69\.',) %}
+block4 zone-f ffffffffffffff
 
 
 
 {% else %}
-this is the test block
+block else nothing matched nothing matched nothing****
 ip address is {{ ansible_all_ipv4_addresses[0] }}
 
 
