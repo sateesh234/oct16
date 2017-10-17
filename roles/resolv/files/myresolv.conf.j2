@@ -2,7 +2,7 @@
 
 {% if ansible_all_ipv4_addresses | (ansible_all_ipv4_addresses | regex_search('^172\.31\.11')) %}
 block1 zone-b bbbbbbbbb
-ip address is {{ ansible_all_ipv4_addresses[0] }}
+ip address is {{ ansible_all_ipv4_addresses }}
 
 {% elif ansible_all_ipv4_addresses[0] == regex_search('^172\.31\.84\.') %}
 block2 zone-c cccccccccccccccccc
@@ -17,7 +17,7 @@ block4 zone-f ffffffffffffff
 
 {% else %}
 block else nothing matched nothing matched nothing****
-ip address is {{ ansible_all_ipv4_addresses[0] }}
+ip address is {{ ansible_all_ipv4_addresses }}
 
 
 {% endif %}
