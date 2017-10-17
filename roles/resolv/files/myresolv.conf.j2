@@ -1,15 +1,15 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | re.match('^172\.31\.11\.' ansible_all_ipv4_addresses[0]) %}
-block1 zoneb
+{% if ansible_all_ipv4_addresses[0] | select('match','^172\.31\.11\.') ansible_all_ipv4_addresses[0]) %}
+block1 zoneb hhhh
 
-{% elif ansible_all_ipv4_addresses[0] | re.match('^172\.31\.84\.' ansible_all_ipv4_addresses[0]) %}
+{% elif ansible_all_ipv4_addresses[0] | select('match','^172\.31\.84\.') ansible_all_ipv4_addresses[0]) %}
 block2 zonec
 
-{% elif  ansible_all_ipv4_addresses[0] | re.match('^172\.31\.25\.', ansible_all_ipv4_addresses[0]) %}
+{% elif ansible_all_ipv4_addresses[0] | select('match','^172\.31\.25\.') ansible_all_ipv4_addresses[0]) %}
 block3 zoned
 
-{% elif  ansible_all_ipv4_addresses[0] | re.match('^172\.31\.69\.', ansible_all_ipv4_addresses[0]) %}
+{% elif ansible_all_ipv4_addresses[0] | select('match','^172\.31\.11\.') ansible_all_ipv4_addresses[0]) %}
 block4 zonef
 
 
