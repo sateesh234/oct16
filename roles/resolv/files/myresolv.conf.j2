@@ -1,16 +1,16 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.11\.') %}
+{% if ansible_all_ipv4_addresses | (ansible_all_ipv4_addresses | regex_search('^172\.31\.11\.')) %}
 block1 zone-b change
 ip address is {{ ansible_all_ipv4_addresses }}
 
-{% elif ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.84\.') %}
+{% elif ansible_all_ipv4_addresses | regex_search('^172\.31\.84\.') %}
 block2 zone-c change
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.') %}
+{% elif  ansible_all_ipv4_addresses | regex_search('^172\.31\.25\.') %}
 block3 zone-d change
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.') %}
+{% elif  ansible_all_ipv4_addresses | regex_search('^172\.31\.69\.') %}
 block4 zone-f change
 
 
