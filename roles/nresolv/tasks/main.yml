@@ -1,41 +1,37 @@
 ---
 
-- name: resolv conf file creationdc1
-  file:
-    src: files/dc1/mynresolve.conf
+- name: resolv conf template creationdc1
+  template:
+    src: template/dc1/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
     mode: '0744'
-    state: file
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(1[0-9])\.'))
 
-- name: resolv conf file creationdc2
-  file:
-    src: files/dc2/mynresolve.conf
+- name: resolv conf template creationdc2
+  template:
+    src: template/dc2/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
     mode: '0744'
-    state: file
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.([6-8]4)\.'))
 
-- name: resolv conf file creationdc3
-  file:
-    src: files/dc3/mynresolve.conf
+- name: resolv conf template creationdc3
+  template:
+    src: template/dc3/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
     mode: '0744'
-    state: file
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(2[3-5])\.'))
 
-- name: resolv conf file creationdc4 default
-  file:
-    src: files/dc4/mynresolve.conf
+- name: resolv conf template creationdc4 default
+  template:
+    src: template/dc4/mynresolve.conf
     dest: /etc/mynresolve.conf
     owner: root
     group: root
     mode: '0744'
-    state: file
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.'))
