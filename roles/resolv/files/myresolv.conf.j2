@@ -1,18 +1,18 @@
 #this is example of template
 
-{% if ansible_all_ipv4_addresses[0] | regex_match('^172\.31\.[0-14]\.') %}
+{% if ansible_all_ipv4_addresses[0] | re.match('^172\.31\.[0-14]\.') %}
 block1 zoneb cidr[0-14]
 {{ ansible_all_ipv4_addresses[0] }}
 
-{% elif ansible_all_ipv4_addresses[0] | regex_match('^172\.31\.[80-89]\.') %}
+{% elif ansible_all_ipv4_addresses[0] | re.match('^172\.31\.[80-89]\.') %}
 block2 zonec cidr [80-89]
 {{ ansible_all_ipv4_addresses[0] }}
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_match('^172\.31\.[16-30]\.',) %}
+{% elif  ansible_all_ipv4_addresses[0] | re.match('^172\.31\.[16-30]\.',) %}
 block3 zoned cidr [16-30]
 {{ ansible_all_ipv4_addresses[0] }}
 
-{% elif  ansible_all_ipv4_addresses[0] | regex_match('^172\.31\.[64-75]\.',) %}
+{% elif  ansible_all_ipv4_addresses[0] | re.match('^172\.31\.[64-75]\.',) %}
 block4 zonef cidr [64-75]
 {{ ansible_all_ipv4_addresses[0] }}
 
