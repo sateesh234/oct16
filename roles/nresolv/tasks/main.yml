@@ -1,6 +1,6 @@
 ---
 
-- name: resolv conf template creationdc1
+- name: resolv conf template creationdc1 (ip range 172.31.[10-19].x)
   template:
     src: template/dc1/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -9,7 +9,7 @@
     mode: '0744'
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.(1[0-9])\.'))
 
-- name: resolv conf template creationdc2
+- name: resolv conf template creationdc2 (ip range 172.31.[64-84].X)
   template:
     src: template/dc2/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -18,7 +18,7 @@
     mode: '0744'
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.([6-8]4)\.'))
 
-- name: resolv conf template creationdc3
+- name: resolv conf template creationdc3 (ip range 172.31.25.X)
   template:
     src: template/dc3/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -27,7 +27,7 @@
     mode: '0744'
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.25\.'))
 
-- name: resolv conf template creationdc4 default
+- name: resolv conf template creationdc4 default(ip range 172.31.69.X)
   template:
     src: template/dc4/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -35,3 +35,12 @@
     group: root
     mode: '0744'
   when: (ansible_all_ipv4_addresses[0] | regex_search('^172\.31\.69\.'))
+
+- name: resolv conf template creationdc4 default(all other ip ranges)
+  template:
+    src: template/default/mynresolve.conf
+    dest: /etc/mynresolve.conf
+    owner: root
+    group: root
+    mode: '0744'
+  when: condition for except those above four (not equal to those above four)
