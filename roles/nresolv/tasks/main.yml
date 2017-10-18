@@ -43,4 +43,5 @@
     owner: root
     group: root
     mode: '0744'
-  when: condition for except those above four (not equal to those above four)
+  when: (ansible_all_ipv4_addresses[0] != regex_search('^172\.31\.(1[0-9])\.') or (ansible_all_ipv4_addresses[0] != regex_search('^172\.31\.([6-8]4)\.')) or (ansible_all_ipv4_addresses[0] != regex_search('^172\.31\.25\.')) or (ansible_all_ipv4_addresses[0] != regex_search('^172\.31\.69\.'))
+  #when: condition for except those above four (not equal to those above four)
