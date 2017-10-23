@@ -34,7 +34,7 @@
     owner: root
     group: root
     mode: '0744'
-  when: (vpc.stdout == "dc1")
+  when: (vpc.stdout == "dc1" or vpc.stdout == "default")
 
 - name: resolv conf template dc2
   template:
@@ -54,11 +54,11 @@
     mode: '0744'
   when: (vpc.stdout == "dc3")
 
-- name: resolv conf template dfault
-  template:
-    src: template/default/mynresolve.conf
-    dest: /etc/mynresolve.conf
-    owner: root
-    group: root
-    mode: '0744'
-  when: (vpc.stdout == "default")
+# - name: resolv conf template dfault
+#   template:
+#     src: template/default/mynresolve.conf
+#     dest: /etc/mynresolve.conf
+#     owner: root
+#     group: root
+#     mode: '0744'
+#   when: (vpc.stdout == "default")
