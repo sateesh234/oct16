@@ -18,7 +18,7 @@
       echo "dc1"
     elif [[ ($(hostname -I ) =~ ^10\.4\.) ]]; then
       echo "dc2"
-    elif [[ ($(hostname -I ) =~ ^10\.([0-3])\.) || ($(hostname -I ) =~ ^172\.31\.64\.) || ($(hostname -I ) =~ ^172\.31\.80\.) ]]; then
+    elif [[ ($(hostname -I ) =~ ^10\.([0-3])\.) ($(hostname -I ) =~ ^10\.6\.) || ($(hostname -I ) =~ ^172\.31\.64\.) || ($(hostname -I ) =~ ^172\.31\.80\.) ]]; then
       echo "dc3"
     else
       echo "default"
