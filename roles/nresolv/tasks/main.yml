@@ -1,22 +1,10 @@
 ---
 
-- name: shell module
-  shell: |
-    if [[ ($(hostname -I ) =~ ^172\.31\.) ]]; then
-      echo "dc1"
-    elif [[ ($(hostname -I ) =~ ^10\.([4-8])\.) || ($(hostname -I ) =~ ^10\.(3[0-5])\.)  ]]; then
-      echo "dc2"
-    elif [[ ($(hostname -I ) =~ ^10\.([0-3])\.) ]]; then
-      echo "dc3"
-    else
-      echo "default"
-    fi
-  register: vpc
 # - name: shell module
 #   shell: |
 #     if [[ ($(hostname -I ) =~ ^172\.31\.) ]]; then
 #       echo "dc1"
-#     elif [[ ($(hostname -I ) =~ ^10\.([4-8])\.) ]]; then
+#     elif [[ ($(hostname -I ) =~ ^10\.([4-8])\.) || ($(hostname -I ) =~ ^10\.(3[0-5])\.)  ]]; then
 #       echo "dc2"
 #     elif [[ ($(hostname -I ) =~ ^10\.([0-3])\.) ]]; then
 #       echo "dc3"
@@ -24,6 +12,18 @@
 #       echo "default"
 #     fi
 #   register: vpc
+- name: shell module
+  shell: |
+    if [[ ($(hostname -I ) =~ ^172\.31\.) ]]; then
+      echo "dc1"
+    elif [[ ($(hostname -I ) =~ ^10\.([4-8])\.) ]]; then
+      echo "dc2"
+    elif [[ ($(hostname -I ) =~ ^10\.([0-3])\.) ]]; then
+      echo "dc3"
+    else
+      echo "default"
+    fi
+  register: vpc
 
 
 
@@ -34,7 +34,7 @@
     owner: root
     group: root
     mode: '0744'
-  when: (vpc.stdout == "dc1")
+  when: (vpc.stdout == "dc1") or (vpc.stdout == default)
 
 - name: resolv conf template dc2
   template:
