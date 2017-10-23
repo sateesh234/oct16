@@ -34,7 +34,7 @@
     owner: root
     group: root
     mode: '0744'
-  when: (vpc.stdout == "dc1") or (vpc.stdout == default)
+  when: (vpc.stdout == "dc1")
 
 - name: resolv conf template dc2
   template:
