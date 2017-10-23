@@ -15,7 +15,7 @@
 
 
 
-- name: resolv conf template
+- name: resolv conf template dc1
   template:
     src: template/dc1/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -24,7 +24,7 @@
     mode: '0744'
   when: (vpc.stdout == "dc1")
 
-- name: resolv conf template
+- name: resolv conf template dc2
   template:
     src: template/dc2/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -33,7 +33,7 @@
     mode: '0744'
   when: (vpc.stdout == "dc2")
 
-- name: resolv conf template
+- name: resolv conf template dc3
   template:
     src: template/dc3/mynresolve.conf
     dest: /etc/mynresolve.conf
@@ -42,7 +42,7 @@
     mode: '0744'
   when: (vpc.stdout == "dc3")
 
-- name: resolv conf template
+- name: resolv conf template dfault
   template:
     src: template/default/mynresolve.conf
     dest: /etc/mynresolve.conf
