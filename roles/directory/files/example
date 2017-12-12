@@ -2,4 +2,4 @@ this is first line
 example
 this is centos machine provided by {{ provider }}
 
-IP addresss of this VM is {{ ansible_all_ipv4_addresses }}
+IP addresss of this VM is {{ ansible_all_ipv4_addresses[0] }}
