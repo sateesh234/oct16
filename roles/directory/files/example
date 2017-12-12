@@ -1,2 +1,3 @@
 this is first line
 example
+this is centos machine provided by {{ provider }}
