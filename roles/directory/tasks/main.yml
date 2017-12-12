@@ -1,0 +1,10 @@
+---
+
+# creating directory on remote VMs
+- name: create directory on remote VMs
+  file:
+    path: /etc/first
+    state: directory
+    owner: root
+    group: root
+    mode: 0644
