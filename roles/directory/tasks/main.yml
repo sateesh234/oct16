@@ -23,3 +23,10 @@
   package:
     name: nginx
     state: installed
+
+# create customized file
+- name: changing content of file
+  template:
+    src: files/example
+    dest: /etc/first/second
+    backup: yes
