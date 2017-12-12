@@ -16,6 +16,7 @@
     owner: root
     group: root
     mode: 0644
+    state: file
 
 # install nginx on VMs
 - name: install nginx on VMs
