@@ -8,3 +8,17 @@
     owner: root
     group: root
     mode: 0644
+
+# create a file name second
+- name: create a file called second
+  file:
+    path: /etc/first/second
+    owner: root
+    group: root
+    mode: 0644
+
+# install nginx on VMs
+- name: install nginx on VMs
+  package:
+    name: nginx
+    state: installed
